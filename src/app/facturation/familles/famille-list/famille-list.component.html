@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              <h1>Users</h1>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary" (click)="redirectToNewFamily()">Créer</button>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <section class="main">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Code</th>
+              <th>Libellé</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+             
+              <tr *ngFor="let fam of famillies">
+                <td scope="row">{{fam.familyId}}</td>
+                <td scope="row">{{fam.code}}</td>
+                <td scope="row">{{fam.label}}</td>
+                <td>
+                  <button type="button" class="btn btn-success" (click)="redirectToEditFamily(fam)">Modifier</button>
+                  <button type="button" class="btn btn-danger" (click)="deleteFamily(fam)">Supprimer</button>
+                </td>
+              </tr>
+
+            </tbody>
+
+        </table>
+      </section>
+
+
+    </div>
+  </div>
+</div>

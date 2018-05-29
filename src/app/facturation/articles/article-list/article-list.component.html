@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel panel-heading">
+      Liste des articles
+      <button class="btn btn-default pull-right btn-sm" (click)="goToNewAtricle()">Nouveau</button>
+      <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label>Référence:</label>
+       <input type="text" [(ngModel)]="motCle"/>
+       <button type="button" class="btn btn-primary" (click)="chercher()">Chercher</button>
+      </div>
+      <table class="table table-striped">
+        <tr>
+          <th>CODE</th><th>Désignation</th><th>Price</th><th>Famille</th><th>Action</th>
+        </tr>
+        <tr *ngFor="let c of pageArticle?.content">
+          <td>{{c.code}}</td>
+          <td>{{c.label}}</td>
+          <td>{{c.price}}</td>
+          <td>{{c.family?.label}}</td>
+          <td>
+              <a>
+                <span class="glyphicon glyphicon-pencil"></span>
+              </a>
+              <a (click)="deleteArticle(c)" class="clickable">
+                  <span class="glyphicon glyphicon-trash"></span>
+              </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
