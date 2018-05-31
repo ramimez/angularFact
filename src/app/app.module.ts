@@ -22,6 +22,8 @@ import { FamillesService } from 'services/familles.service';
 import { FamilleFormComponent } from './facturation/familles/famille-form/famille-form.component';
 import { BlueColorsDirective } from './directive/blue-colors.directive';
 import { HighlightDirective } from './directive/highlight.directive';
+import { DemoComponent } from './demo/demo.component';
+import { SqrtPipe } from './pipe/sqrt.pipe';
 
 
 const appRoutes:Routes = [
@@ -35,6 +37,7 @@ const appRoutes:Routes = [
  {path: 'articles', component:ArticleListComponent},
  {path: 'article-new', component:ArticleFormComponent},
  {path: 'users', component:UserComponent},
+ {path: 'demo', component:DemoComponent},
  {path: '',  redirectTo:'/about',pathMatch:'full'}
 ]
 
@@ -55,7 +58,9 @@ const appRoutes:Routes = [
     UserComponent,
     FamilleFormComponent,
     BlueColorsDirective,
-    HighlightDirective
+    HighlightDirective,
+    DemoComponent,
+    SqrtPipe
   ],
   imports: [
     BrowserModule,

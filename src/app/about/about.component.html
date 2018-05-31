@@ -10,40 +10,4 @@
 </div>
 </template>
 
-
-
-
-<div *ngIf="user | async; let user; else loading"> 
-  {{user.firstName}} {{user.lastName}} 
-</div>
- <ng-template #loading>
-    Loading User Data ...
-</ng-template>
-
-
-<h1 blueColors>Test </h1>
-<h1 [appHighlight]="'yellow'">Texte en highlight</h1>
-
-<div *ngIf="authenticated; else noAuthenticated">
-  The user is logged in.
-  <button class="btn btn-primary" (click)="logout()">Log out</button>
-</div>
-
-<ng-template #noAuthenticated>
-    Please login to continue.
-    <button class="btn btn-primary"(click)="login()">Log in</button>
-</ng-template>
-
-<form #f="ngForm">
-    <input type="email" ngModel name="email" required email>
-    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
-    <p>Form state : {{ f.valid ? 'VALID' : 'INVALID' }}</p>
-</form>
-
-
-<input type="radio" value="male" name="gender" ngModel> Male
-<input type="radio" value="female" name="gender" ngModel> Female
-<div>
-<input type="checkbox" name="tc" ngModel>
-</div>
 </div>
